@@ -3,7 +3,7 @@ resource "aws_eks_node_group" "this" {
   version = var.cluster_version
   node_group_name = format("%s-%s", var.prefix, var.node_group_name)
   node_role_arn = aws_iam_role.this.arn
-  subnet_ids = var.private_subnet_ids
+  subnet_ids = var.subnet_ids
 
   scaling_config {
     desired_size = var.scaling_desired_size
