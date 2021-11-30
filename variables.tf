@@ -1,0 +1,65 @@
+variable "prefix" {
+  description = "prefix for aws resources and tags"
+  type = string
+}
+
+variable "cluster_name" {
+  description = "Name of EKS cluster"
+  type = string
+}
+
+variable "cluster_version" {
+  description = "eks cluster version"
+  type = string
+  default = ""
+}
+
+variable "node_group_name" {
+  description = "Name of node group"
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "subnet_list" {
+  description = "Subnet list for EKS node group"
+  type = list(string)
+}
+
+variable "ami_type" {
+  description = "Type of Amazon Machine Image (AMI) associated with the EKS Node Group"
+  type = string
+  default = "AL2_x86_64"
+}
+
+variable "instance_types" {
+  description = "Set of instance types associated with the EKS Node Group"
+  type = list(string)
+}
+
+variable "scaling_desired_size" {
+  description = "Desired size of worker nodes for auto scaling"
+  type = number
+}
+
+variable "scaling_min_size" {
+  description = "Min size of worker nodes for auto scaling"
+  type = number
+}
+
+variable "scaling_max_size" {
+  description = "Max size of worker nodes for auto scaling"
+  type = number
+}
+
+variable "key_name" {
+  description = "EC2 Key Pair name that provides access for SSH communication with the worker nodes in the EKS Node Group."
+  type = string
+}
+
+variable "tags" {
+  description = "tag map"
+  type = map(string)
+}
