@@ -3,6 +3,12 @@ variable "account_id" {
   type = list(string)
 }
 
+variable "region" {
+  description = "AWS Region"
+  type = string
+  default = ""
+}
+
 variable "vpc_id" {
   description = "vpc id"
   type = string
