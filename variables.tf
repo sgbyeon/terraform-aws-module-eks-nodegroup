@@ -1,3 +1,13 @@
+variable "account_id" {
+  description = "List of Allowed AWS account IDs"
+  type = list(string)
+}
+
+variable "vpc_id" {
+  description = "vpc id"
+  type = string
+}
+
 variable "prefix" {
   description = "prefix for aws resources and tags"
   type = string
