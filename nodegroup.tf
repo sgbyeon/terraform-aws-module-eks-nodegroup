@@ -19,7 +19,8 @@ resource "aws_eks_node_group" "this" {
     aws_iam_role_policy_attachment.AmazonEKSWorkerNodePolicy,
     aws_iam_role_policy_attachment.AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.AmazonEC2ContainerRegistryReadOnly,
-    aws_iam_role_policy_attachment.Amazon_EBS_CSI_Driver
+    aws_iam_role_policy_attachment.Amazon_EBS_CSI_Driver,
+    aws_ebs_encryption_by_default.this
   ]
 
   lifecycle {
