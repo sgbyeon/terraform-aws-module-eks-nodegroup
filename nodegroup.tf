@@ -3,7 +3,7 @@ resource "aws_eks_node_group" "this" {
   version = var.cluster_version
   node_group_name = format("%s-%s", var.prefix, var.node_group_name)
   node_role_arn = aws_iam_role.this.arn
-  subnet_ids = var.subnet_list
+  subnet_ids = var.private_subnet_ids
 
   scaling_config {
     desired_size = var.scaling_desired_size
@@ -12,6 +12,7 @@ resource "aws_eks_node_group" "this" {
   }
 
   ami_type = var.ami_type
+  capacity_type = var.capacity_type
   instance_types = var.instance_types
 
   depends_on = [
