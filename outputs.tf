@@ -3,6 +3,11 @@ output "account_id" {
   value = var.account_id
 }
 
+output "region" {
+  description = "AWS region"
+  value = var.region
+}
+
 output "vpc_id" {
   description = "VPC ID"
   value = var.vpc_id
