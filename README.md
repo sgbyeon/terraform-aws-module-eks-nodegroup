@@ -1,7 +1,6 @@
 # AWS EKS managed-NodeGroup Terraform custom module
 * EKS Cluster에 조인할 매니지드 node group 생성
 * ebs 기본 암호(기본키 사용, 선택불가)
-* 
 
 ## Usage
 
