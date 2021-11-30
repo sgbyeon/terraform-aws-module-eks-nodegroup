@@ -34,6 +34,12 @@ variable "ami_type" {
   default = "AL2_x86_64"
 }
 
+variable "capacity_type" {
+  description = "On-Deamnd or SPOT"
+  type = string
+  default = ""
+}
+
 variable "instance_types" {
   description = "Set of instance types associated with the EKS Node Group"
   type = list(string)
