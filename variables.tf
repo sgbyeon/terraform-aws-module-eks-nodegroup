@@ -73,7 +73,7 @@ variable "key_name" {
 
 variable "source_security_group_ids" {
   description = "Define the security group of the instance that can connect to the EKS node with ssh"
-  type = string
+  type = list(string)
 }
 
 variable "tags" {
