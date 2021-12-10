@@ -68,3 +68,8 @@ resource "aws_iam_role_policy_attachment" "Amazon_EBS_CSI_Driver" {
   policy_arn = aws_iam_policy.Amazon_EBS_CSI_Driver.arn
   role = aws_iam_role.this.name
 }
+
+resource "aws_iam_role_policy_attachment" "AutoScalingReadOnlyAccess" {
+  policy_arn = "arn:aws:iam::aws:policy/AutoScalingReadOnlyAccess"
+  role = aws_iam_role.this.name
+}
