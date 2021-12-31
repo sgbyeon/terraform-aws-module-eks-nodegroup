@@ -1,7 +1,7 @@
 resource "aws_eks_node_group" "this" {
-  cluster_name = format("%s-%s", var.prefix, var.cluster_name)
+  cluster_name = format("%s-%s-eks", var.prefix, var.cluster_name)
   version = var.cluster_version
-  node_group_name = format("%s-%s", var.prefix, var.node_group_name)
+  node_group_name = format("%s-%s-eks-%s", var.prefix, var.cluster_name, var.node_group_name)
   node_role_arn = aws_iam_role.this.arn
   subnet_ids = var.subnet_ids
 
@@ -35,7 +35,7 @@ resource "aws_eks_node_group" "this" {
   }
 
   tags = merge(var.tags, tomap({
-    Name = format("%s-%s-%s", var.prefix, var.cluster_name, var.node_group_name),
+    Name = format("%s.%s.eks.%s", var.prefix, var.cluster_name, var.node_group_name),
     "kubernetes.io/cluster/${var.prefix}-${var.cluster_name}" = "owned"
   }))
 }
